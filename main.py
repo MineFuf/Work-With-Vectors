@@ -23,25 +23,27 @@ while True:
     if keys[pg.K_DOWN]:
         vec2rot -= 1
     if keys[pg.K_RIGHT]:
-        vec2l += 1
+        vec2l += 3
     if keys[pg.K_LEFT]:
-        vec2l -= 1
+        vec2l -= 3
 
     if keys[pg.K_w]:
         vec1rot += 1
     if keys[pg.K_s]:
         vec1rot -= 1
     if keys[pg.K_d]:
-        vec1l += 1
+        vec1l += 3
     if keys[pg.K_a]:
-        vec1l -= 1
+        vec1l -= 3
 
+    if vec1rot > 360: vec1rot -= 360
+    if vec1rot < 0: vec1rot += 360
     if vec2rot > 360: vec2rot -= 360
     if vec2rot < 0: vec2rot += 360
 
     screen.fill(clrs.DARK_GREY)
-    vec1 = Vector(vec(vec1l, 0).rotate(-vec1rot), clrs.RED, START_POS)
-    vec2 = Vector(vec(vec2l, 0).rotate(-vec2rot),  clrs.BLUE, START_POS)
+    vec1 = Vector(vec(vec1l, 0).rotate(vec1rot), clrs.RED, START_POS)
+    vec2 = Vector(vec(vec2l, 0).rotate(vec2rot),  clrs.BLUE, START_POS)
     # vec3 = Vector(vec(200, 0).rotate(-90), clrs.YELLOW, START_POS)
     last_vec = Vector(vec1.v + vec2.v,  clrs.GREEN, START_POS)
 

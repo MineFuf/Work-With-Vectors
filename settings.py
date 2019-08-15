@@ -11,6 +11,6 @@ class Coordinates:
 FPS = 60
 WIDTH = int(512 * 1.5)
 HEIGHT = int(512 * 1)
-START_POS = Coordinates(32, HEIGHT / 2)
+START_POS = Coordinates(32, 32)
 screen = display.set_mode((WIDTH, HEIGHT))
 clock = time.Clock()
